@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Lab1.</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title> Виконав Білак. Л. М. </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    Завдання 3<br />
+    Згенерувати матрицю розміром NxN. Знайти суму елементів головної діагоналі.
+    Саму діагональ позначити жовтим кольором
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Розмір матриці (N)</ion-label>
+      <ion-input type="number" [(ngModel)]="matrixSize"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="generateMatrix()"
+      >Згенерувати матрицю</ion-button
+    >
+
+    <ion-grid *ngIf="matrix.length > 0">
+      <ion-row *ngFor="let row of matrix; let i = index">
+        <ion-col
+          *ngFor="let element of row; let j = index"
+          [style.background-color]="i === j ? 'yellow' : 'white'"
+        >
+          {{ element }}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-item *ngIf="diagonalSum !== 0">
+      <ion-label>
+        Сума елементів головної діагоналі: {{ diagonalSum }}
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-content>
