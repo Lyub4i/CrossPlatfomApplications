@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Lab3</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title> Виконав Білак. Л. М. </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    Каталог газет: <br />• Назва газети. <br />• Номер. <br />• Дата виходу.
+    <br />• Кількість сторінок. <br />Запит. Ввести місяць у окремій формі та
+    позначити кольором всі газети, що виходили в певному місяці.
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Місяць</ion-label>
+      <ion-input type="text" [(ngModel)]="month"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="load()">Знайти</ion-button>
+  </ion-card-content>
+  <ion-card-content>
+    <ion-list *ngFor="let month of data | keyvalue">
+      <ion-list-header>{{ month.key }}</ion-list-header>
+      <ion-item *ngFor="let newspaper of month.value">
+        <ion-label [style.color]="isCorrectMonth(month.key) ? 'red' : 'black'">
+          <h2>{{ newspaper.title }}</h2>
+          <p>Issue Number: {{ newspaper.issue_number }}</p>
+          <p>Publication Date: {{ newspaper.publication_date }}</p>
+          <p>Page Count: {{ newspaper.page_count }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-content>
