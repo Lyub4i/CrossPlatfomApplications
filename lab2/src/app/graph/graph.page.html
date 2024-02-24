@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Lab2.</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title> Виконав Білак. Л. М. </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    Завдання 3<br />
+    Згенерувати матрицю розміром NxN. Знайти суму елементів головної діагоналі.
+    Саму діагональ позначити жовтим кольором
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Xn</ion-label>
+      <ion-input type="number" [(ngModel)]="xn"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Xk</ion-label>
+      <ion-input type="number" [(ngModel)]="xk"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">a</ion-label>
+      <ion-input type="number" [(ngModel)]="a"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">h</ion-label>
+      <ion-input type="number" [(ngModel)]="h"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="graphras()">Розрахунок</ion-button>
+    <canvas #lineCanvas></canvas>
+    <ion-item *ngFor="let item of data1">{{item}}</ion-item>
+  </ion-card-content>
+</ion-content>
