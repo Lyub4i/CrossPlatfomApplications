@@ -1,0 +1,28 @@
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    Завдання 2<br />
+    На заданому проміжку чисел [a,b] підрахуйте добуток чисел, кратних 7 і
+    менших, ніж 30.
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Початкове число (a)</ion-label>
+      <ion-input type="number" [(ngModel)]="a"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Кінцеве число (b)</ion-label>
+      <ion-input type="number" [(ngModel)]="b"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="calculateProduct()"
+      >Підрахувати</ion-button
+    >
+
+    <ion-item *ngIf="product !== null">
+      <ion-label>
+        Добуток чисел кратних 7 і менших 30: {{ product }}
+      </ion-label>
+    </ion-item>
+  </ion-card-content>
+</ion-content>
