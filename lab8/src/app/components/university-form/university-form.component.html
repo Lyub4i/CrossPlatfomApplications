@@ -1,0 +1,72 @@
+<form [formGroup]="facultetForm" (ngSubmit)="onSubmit()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Факультет</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Назва:</ion-label>
+        <ion-input
+          id="facultet-name"
+          type="text"
+          formControlName="name"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">ПІБ факультета:</ion-label>
+        <ion-input
+          id="facultet-decan"
+          type="text"
+          formControlName="decanFullName"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Телефон:</ion-label>
+        <ion-input
+          id="facultet-phone"
+          type="text"
+          formControlName="phone"
+        ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Адреса:</ion-label>
+        <ion-input
+          id="facultet-address"
+          type="text"
+          formControlName="address"
+        ></ion-input>
+      </ion-item>
+      <ion-card formArrayName="cafedres">
+        <ion-card-header>
+          <ion-card-title>Кафедри</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-button color="tertiary" (click)="addCafedra()">
+            <ion-icon slot="start" name="add"></ion-icon>
+            Додати кафедру
+          </ion-button>
+          <ion-item *ngFor="let cafedre of getControls(); let i = index">
+            <ion-input
+              type="text"
+              formControlName="{{ i }}"
+              placeholder="Назва кафедри"
+            ></ion-input>
+            <ion-button color="tertiary" (click)="deleteCafedra(i)">
+              <ion-icon slot="start" name="trash"></ion-icon>
+              Видалити
+            </ion-button>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </ion-card-content>
+  </ion-card>
+  <ion-button
+    type="submit"
+    color="my-color"
+    expand="block"
+    fill="outline"
+    [disabled]="!facultetForm.valid"
+  >
+    Submit</ion-button
+  >
+</form>
