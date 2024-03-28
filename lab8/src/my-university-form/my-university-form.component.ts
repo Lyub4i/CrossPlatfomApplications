@@ -1,19 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Facultet } from './Facultet';
 
 @Component({
-  selector: 'app-university-form',
-  templateUrl: './university-form.component.html',
-  styleUrls: ['./university-form.component.scss'],
+  selector: 'app-my-university-form',
+  templateUrl: './my-university-form.component.html',
+  styleUrls: ['./my-university-form.component.scss'],
 })
-export class UniversityFormComponent implements OnInit {
+export class MyUniversityFromComponent  implements OnInit {
   facultetForm!: FormGroup;
   facultet!: Facultet;
 

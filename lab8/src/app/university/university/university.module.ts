@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { UniversityPageRoutingModule } from './university-routing.module';
 
 import { UniversityPage } from './university.page';
-import { UniversityFormComponent } from '../../components/university-form/university-form.component';
+import { MyUniversityFormModule } from '../../../my-university-form/my-university-form.component.module'
 
 @NgModule({
   imports: [
@@ -15,8 +15,9 @@ import { UniversityFormComponent } from '../../components/university-form/univer
     FormsModule,
     IonicModule,
     UniversityPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MyUniversityFormModule
   ],
-  declarations: [UniversityPage, UniversityFormComponent],
+  declarations: [UniversityPage],
 })
 export class UniversityPageModule {}
