@@ -45,10 +45,13 @@
             <ion-icon slot="start" name="add"></ion-icon>
             Додати кафедру
           </ion-button>
-          <ion-item *ngFor="let cafedre of getControls(); let i = index">
+          <ion-item
+            *ngFor="let cafedre of getControls(); let i = index"
+            [formGroupName]="i"
+          >
             <ion-input
               type="text"
-              formControlName="{{ i }}"
+              formControlName="name"
               placeholder="Назва кафедри"
             ></ion-input>
             <ion-button color="tertiary" (click)="deleteCafedra(i)">

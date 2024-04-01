@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { Facultet } from './Facultet';
 
 @Component({
@@ -7,7 +13,7 @@ import { Facultet } from './Facultet';
   templateUrl: './my-university-form.component.html',
   styleUrls: ['./my-university-form.component.scss'],
 })
-export class MyUniversityFromComponent  implements OnInit {
+export class MyUniversityFromComponent implements OnInit {
   facultetForm!: FormGroup;
   facultet!: Facultet;
 
@@ -34,6 +40,7 @@ export class MyUniversityFromComponent  implements OnInit {
   }
 
   getControls() {
+    console.log('getControls');
     return (this.facultetForm.get('cafedres') as FormArray).controls;
   }
 
