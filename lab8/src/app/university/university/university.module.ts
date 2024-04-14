@@ -8,6 +8,8 @@ import { UniversityPageRoutingModule } from './university-routing.module';
 
 import { UniversityPage } from './university.page';
 import { MyUniversityFormModule } from '../../../my-university-form/my-university-form.component.module'
+import { FacultyFormComponent } from 'src/app/faculty-form/faculty-form.component';
+import { MyHeaderModule } from 'src/my-header/my-header.component.module';
 
 @NgModule({
   imports: [
@@ -16,8 +18,9 @@ import { MyUniversityFormModule } from '../../../my-university-form/my-universit
     IonicModule,
     UniversityPageRoutingModule,
     ReactiveFormsModule,
-    MyUniversityFormModule
+    MyUniversityFormModule,
+    MyHeaderModule
   ],
-  declarations: [UniversityPage],
+  declarations: [UniversityPage, FacultyFormComponent],
 })
 export class UniversityPageModule {}

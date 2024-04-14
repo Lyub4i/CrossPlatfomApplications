@@ -3,14 +3,14 @@ export class Facultet {
   deacanFullName: string = '';
   phone: string = '';
   address: string = '';
-  cafedres: string[] = [];
+  cafedres: any[] = [];
 
   constructor(
     name: string,
     decanfullName: string,
     phone: string,
     address: string,
-    cafedres: string[]
+    cafedres: any[]
   ) {
     this.name = name;
     this.deacanFullName = decanfullName;

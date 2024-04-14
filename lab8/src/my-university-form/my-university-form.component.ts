@@ -6,7 +6,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Facultet } from './Facultet';
+import { Facultet } from '../app/faculty-form/Facultet';
 
 @Component({
   selector: 'app-my-university-form',
