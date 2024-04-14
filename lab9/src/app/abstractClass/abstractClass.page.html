@@ -1,0 +1,27 @@
+<app-my-header name="Лабораторна робота №4"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    Завдання по роботі з абстрактними класами:
+    <br />
+    Завдання 1. Скласти програму з абстрактним батьківським класом і двома
+    об'єктами – нащадками. Реалізувати циклічне виведення параметрів об'єктів,
+    використовуючи поліморфний контейнер - масив об'єктів базового класу
+    (кількість об'єктів> = 5)
+    <br />
+    Завдання 2. Організувати обчислення середньої вартості літаків і середньої
+    вартості кораблів.
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Введіть кількість транспортів</ion-label>
+      <ion-input type="number" [(ngModel)]="inputField"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" (click)="ras()">Знайти</ion-button>
+    <ion-label>Середня ціна літаків: {{serPlanes}}</ion-label>
+    <br>
+    <ion-label>Середня ціна кораблів: {{serShips}}</ion-label>
+    <ion-item *ngFor="let item of vehicles">{{item.name + '- ' + item.getCost()}}</ion-item>
+  </ion-card-content>
+</ion-content>
