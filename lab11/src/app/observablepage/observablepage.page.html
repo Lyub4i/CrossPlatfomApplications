@@ -1,0 +1,35 @@
+<app-my-header name="Лабораторна робота №10"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-button (click)="nextCity()">Наступне місто</ion-button>
+    <ion-label> Поточне місто: </ion-label>
+    <ion-label> {{city.name}} </ion-label>
+  </ion-item>
+  <ion-item
+    *ngFor="let business of businessList.searchBusinessResult; let j = index"
+  >
+    {{business}}
+  </ion-item>
+  <ion-card>
+    <ion-item>
+      <ion-label position="stacked">Введіть нове місто</ion-label>
+      <ion-input #InputCity></ion-input>
+      <ion-button (click)="addCity(InputCity.value)">Додати місто</ion-button>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> Додати бізнес</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label position="stacked">Введіть назву</ion-label>
+      <ion-input #InputName></ion-input>
+      <ion-label position="stacked">Введіть власника</ion-label>
+      <ion-input #InputHead></ion-input>
+      <ion-button (click)="addBusiness(InputName.value, InputHead.value)"
+        >Додати бізнес</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
