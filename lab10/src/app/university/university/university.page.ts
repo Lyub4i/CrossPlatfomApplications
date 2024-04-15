@@ -8,25 +8,16 @@ import { Facultet } from 'src/app/faculty-form/Facultet';
 })
 export class UniversityPage implements OnInit {
   facultet!: any;
-
-  isEditing = false;
+  facultets: Facultet[] = [];
 
   constructor() {}
 
   onFacultetAdded(newFacultet: Facultet) {
-    this.facultet = newFacultet;
-    this.isEditing = true;
+    this.facultets.push(newFacultet);
   }
 
   onFacultetUpdated(updatedFacultet: Facultet) {
     this.facultet = updatedFacultet;
   }
-
-  onBackToForm() {
-    this.isEditing = false;
-    this.facultet = null;
-  }
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,17 +1,15 @@
 <app-my-header name="Лабораторна робота №8"></app-my-header>
 
 <ion-content [fullscreen]="true">
-  <ng-container *ngIf="!isEditing; else editMode">
-    <app-faculty-form
-      (facultetAddedEvent)="onFacultetAdded($event)"
-    ></app-faculty-form>
-  </ng-container>
+  <app-faculty-form
+    (facultetAddedEvent)="onFacultetAdded($event)"
+  ></app-faculty-form>
 
-  <ng-template #editMode>
-    <app-faculty-detail
-      [facultet]="facultet"
-      (facultetUpdatedEvent)="onFacultetUpdated($event)"
-    ></app-faculty-detail>
-    <ion-button (click)="onBackToForm()">Повернутися до форми</ion-button>
-  </ng-template>
+  <div *ngIf="facultets && facultets.length > 0" class="facultet-list">
+    <h2>Факультети:</h2>
+    <div *ngFor="let facultetTest of facultets; let last = last">
+      <app-faculty-detail [facultet]="facultetTest"></app-faculty-detail>
+      <div *ngIf="!last" class="divider"></div>
+    </div>
+  </div>
 </ion-content>

@@ -71,6 +71,8 @@ export class FacultyFormComponent implements OnInit {
       console.log(this.facultet);
 
       this.facultetAddedEvent.emit(this.facultet);
+
+      this.facultetForm.reset();
     }
   }
 
