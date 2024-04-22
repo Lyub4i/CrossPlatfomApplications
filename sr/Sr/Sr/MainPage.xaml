@@ -1,0 +1,20 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIApp.MainPage">
+
+    <StackLayout Padding="20">
+        <Label Text="Завдання 1" FontSize="20" />
+        <Entry x:Name="entryA" Placeholder="Введіть a" Keyboard="Numeric" />
+        <Entry x:Name="entryB" Placeholder="Введіть b" Keyboard="Numeric" />
+        <Button x:Name="button1" Text="Обчислити" />
+        <Label x:Name="label1" FontSize="20" />
+
+        <Label Text="Завдання 2" FontSize="20" />
+        <Entry x:Name="entryNum1" Placeholder="Введіть перше число" Keyboard="Numeric" />
+        <Entry x:Name="entryNum2" Placeholder="Введіть друге число" Keyboard="Numeric" />
+        <Entry x:Name="entryNum3" Placeholder="Введіть третє число" Keyboard="Numeric" />
+        <Button x:Name="button2" Text="Обчислити" />
+        <Label x:Name="label2" FontSize="20" />
+    </StackLayout>
+
+</ContentPage>
