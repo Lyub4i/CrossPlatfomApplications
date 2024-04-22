@@ -11,11 +11,12 @@ export class ConfigService {
   city$: BehaviorSubject<City> = new BehaviorSubject<City>(DEFAULT_CITY);
 
   setCity(city: City) {
+    console.log("Змінено");
+    
     this.city$.next(city);
   }
 
   constructor() {}
 }
 
-var cityList = new CityList();
-const DEFAULT_CITY = cityList.city.get(0);
+const DEFAULT_CITY = {"id": 1, "name": "Київ"}

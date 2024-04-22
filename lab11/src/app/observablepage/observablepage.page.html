@@ -4,12 +4,12 @@
   <ion-item>
     <ion-button (click)="nextCity()">Наступне місто</ion-button>
     <ion-label> Поточне місто: </ion-label>
-    <ion-label> {{city.name}} </ion-label>
+    <ion-label *ngIf="city">{{ city.name }}</ion-label>
   </ion-item>
-  <ion-item
-    *ngFor="let business of businessList.searchBusinessResult; let j = index"
-  >
-    {{business}}
+
+  <ion-item *ngFor="let business of businessList.searchBusiness; let j = index">
+    <ion-item>{{business.name}}</ion-item>
+    <ion-item>{{business.owner}}</ion-item>
   </ion-item>
   <ion-card>
     <ion-item>
