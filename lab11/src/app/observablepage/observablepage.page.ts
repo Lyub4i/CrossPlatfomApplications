@@ -78,10 +78,13 @@ export class ObservablepagePage implements OnInit {
     this.fbService.createCity(c);
   }
 
-  addBusiness(name: any, head: any) {
+  addBusiness(name: any, head: any, address: any, mainOffice: any, year: any) {
     let business = new Business();
     business.name = name;
     business.owner = head;
+    business.address = address;
+    business.mainOffice = mainOffice;
+    business.created = year;
     business.city_id = this.city.id;
 
     this.fbService.createBusiness(business);

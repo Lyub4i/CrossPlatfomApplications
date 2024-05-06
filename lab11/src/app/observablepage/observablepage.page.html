@@ -10,6 +10,9 @@
   <ion-item *ngFor="let business of businessList.searchBusiness; let j = index">
     <ion-item>{{business.name}}</ion-item>
     <ion-item>{{business.owner}}</ion-item>
+    <ion-item>{{business.address}}</ion-item>
+    <ion-item>{{business.mainOffice}}</ion-item>
+    <ion-item>{{business.created}}</ion-item>
   </ion-item>
   <ion-card>
     <ion-item>
@@ -27,7 +30,13 @@
       <ion-input #InputName></ion-input>
       <ion-label position="stacked">Введіть власника</ion-label>
       <ion-input #InputHead></ion-input>
-      <ion-button (click)="addBusiness(InputName.value, InputHead.value)"
+      <ion-label position="stacked">Введіть адресу</ion-label>
+      <ion-input #InputAddess></ion-input>
+      <ion-label position="stacked">Введіть локацію головного офісу</ion-label>
+      <ion-input #InputMainOffice></ion-input>
+      <ion-label position="stacked">Введіть рік створення</ion-label>
+      <ion-input #InputYear></ion-input>
+      <ion-button (click)="addBusiness(InputName.value, InputHead.value, InputAddess.value, InputMainOffice.value, InputYear.value)"
         >Додати бізнес</ion-button
       >
     </ion-card-content>

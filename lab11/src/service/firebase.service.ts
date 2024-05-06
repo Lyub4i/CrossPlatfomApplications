@@ -29,6 +29,9 @@ export class FirebaseService {
       name: business.name,
       city_id: business.city_id,
       owner: business.owner,
+      address: business.address,
+      mainOffice: business.mainOffice,
+      created: business.created
     });
   }
 
